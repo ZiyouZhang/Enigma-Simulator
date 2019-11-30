@@ -1,6 +1,8 @@
 #ifndef ROTOR_H
 #define ROTOR_H
 
+#include <vector>
+
 // Enigma component: rotor class.
 class Rotor {
 
@@ -49,10 +51,10 @@ private:
     std::vector<int> notch_pos;
 
     // The mapping for encryption from right to left (towards reflector).
-    int offset_forward[26];
+    int offset_forward[ALPHABET_COUNT];
 
 	// The mapping for encryption from left to right (away from reflector).
-    int offset_backward[26];
+    int offset_backward[ALPHABET_COUNT];
 };
 
 #endif //ROTOR_H

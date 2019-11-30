@@ -82,10 +82,10 @@ Enigma::~Enigma() {
         delete plugboard;
     if (reflector)
         delete reflector;
-    // for (int i = 0; i < num_of_rot; i++) {
-    //     if (rotors[i])
-    //         delete rotors[i];
-    // }
+    for (int i = 0; i < num_of_rot; i++) {
+        if (rotors[i])
+            delete rotors[i];
+    }
     if (rotors)
         delete[] rotors;
 }

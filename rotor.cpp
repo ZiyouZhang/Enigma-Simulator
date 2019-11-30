@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm> 
-#include <vector>
 #include "errors.h"
 #include "constants.h"
 #include "rotor.h"
@@ -80,7 +79,7 @@ int Rotor::load(char* config_path) {
     }
 
     for (std::size_t i = 0; i < 26; i++) {
-        offset_backward[mapping[i]] =  i - mapping[i];
+        offset_backward[mapping[i]] =  - offset_forward[i];
     }
 
     return NO_ERROR;

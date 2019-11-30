@@ -26,7 +26,7 @@ public:
 private:
 
 	// The mapping for encryption.
-	int cipher[26];
+	int cipher[ALPHABET_COUNT];
 
 };
 

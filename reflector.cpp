@@ -7,7 +7,7 @@
 #include "reflector.h"
 
 Reflector::Reflector(char* config_path) {
-    for (int i = 0; i < 26; i++) 
+    for (int i = 0; i < ALPHABET_COUNT; i++) 
         cipher[i] = i;
     status = load(config_path);
 }
@@ -26,7 +26,7 @@ int Reflector::load(char* config_path) {
 
     // Check non-numerical char, index range, duplicated item.
     in_stream.peek();
-    while (!in_stream.eof() && temp_v.size() < 26) {
+    while (!in_stream.eof() && temp_v.size() < ALPHABET_COUNT) {
         in_stream >> current_int >> std::ws;
 
         // Reading integer will fail if there is an non numerical character.
@@ -60,7 +60,7 @@ int Reflector::load(char* config_path) {
     }
 
     // Check the number of items.
-    if (temp_v.size() < 26) {
+    if (temp_v.size() < ALPHABET_COUNT) {
         std::cerr << "Insufficient number of mappings in reflector file: " << config_path << std::endl;
         return INCORRECT_NUMBER_OF_REFLECTOR_PARAMETERS;
     }
